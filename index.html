@@ -8,9 +8,9 @@
 		<p id="orientationGamma"></p>
 		<script>
 			window.addEventListener("deviceorientation", handleOrientation, true);
-			var oa = window.getElementById("orientationAlpha");
-			var ob = window.getElementById("orientationBeta");
-			var og = window.getElementById("orientationGamma");
+			var oa = document.getElementById("orientationAlpha");
+			var ob = document.getElementById("orientationBeta");
+			var og = document.getElementById("orientationGamma");
 			function handleOrientation (event) {
 				oa.innerHTML = event.alpha;
 				ob.innerHTML = event.beta;
