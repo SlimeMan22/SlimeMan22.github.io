@@ -3,18 +3,12 @@
 	<body>
 		<h1>Hello World</h1>
 		<p>Just a testing site for now</p>
-		<p id="orientationAlpha"></p>
-		<p id="orientationBeta"></p>
-		<p id="orientationGamma"></p>
+		<p id="orientationDisplay">0, 0, 0</p>
 		<script>
 			window.addEventListener("deviceorientation", handleOrientation, true);
-			var oa = document.getElementById("orientationAlpha");
-			var ob = document.getElementById("orientationBeta");
-			var og = document.getElementById("orientationGamma");
+			var orientationDisplay = document.getElementById("orientationDisplay");
 			function handleOrientation (event) {
-				oa.innerHTML = event.alpha;
-				ob.innerHTML = event.beta;
-				og.innerHTML = event.gamma;
+				orientationDisplay.innerHTML = event.alpha + '\n' + event.beta + '\n' + event.gamma;
 			}
 		</script>
 	</body>
