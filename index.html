@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<h1>Hello World</h1>
-		<p>Just a testing site for now</p>
-		<p id="oa">0</p>
-		<p id="ob">0</p>
-		<p id="og">0</p>
-		<script>
-			window.addEventListener("deviceorientation", handleOrientation, true);
-			var oa = document.getElementById("oa");
-			var ob = document.getElementById("ob");
-			var og = document.getElementById("og");
-			function handleOrientation (event) {
-				oa.innerHTML = event.alpha;
-				ob.innerHTML = event.beta;
-				og.innerHTML = event.gamma;
-			}
-		</script>
+		<canvas id="myCanvas" width="10000" height="10000">
+		Your browser does not support the HTML5 canvas tag.</canvas>
 	</body>
 </html>
