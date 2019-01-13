@@ -3,5 +3,17 @@
 	<body>
 		<canvas id="myCanvas" width="10000" height="10000">
 		Your browser does not support the HTML5 canvas tag.</canvas>
+		<script>
+			var c = document.getElementById("myCanvas");
+			state = true
+			setInterval(function() {
+				state = not true
+				var ctx = c.getContext("2d");
+				ctx.beginPath();
+				ctx.rect(20, 20, 150, 100);
+				ctx.fillStyle = [255*state, 255*state, 255*state];
+				ctx.fill();
+			}, 10);
+		</script> 
 	</body>
 </html>
