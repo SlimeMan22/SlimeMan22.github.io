@@ -5,14 +5,15 @@
 		Your browser does not support the HTML5 canvas tag.</canvas>
 		<script>
 			var c = document.getElementById("myCanvas");
-			state = true
+			state = true;
 			var ctx = c.getContext("2d");
 			ctx.beginPath();
 			setInterval(function() {
-				state = !state
+				state = !state;
 				ctx.rect(0, 0, window.innerWidth, window.innerHeight);
 				ctx.fillStyle = [255*state, 255*state, 255*state];
 				ctx.fill();
+				console.log(state);
 			}, 25);
 		</script> 
 	</body>
