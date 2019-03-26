@@ -10,7 +10,7 @@
 			ctx.beginPath();
 			setInterval(function() {
 				state = !state
-				ctx.rect(0, 0, 5000, 5000);
+				ctx.rect(0, 0, window.innerWidth, window.innerHeight);
 				ctx.fillStyle = [255*state, 255*state, 255*state];
 				ctx.fill();
 			}, 25);
