@@ -33,14 +33,15 @@
 			}
 			
 			var canvas = document.createElement('canvas');
-			canvas.height = 1000;
-			canvas.width = 1000;
+			var dims = stream.getVideoTracks()[0].getSettings();
+			canvas.width = dims.width;
+			canvas.height = dims.height;
 			var ctx = canvas.getContext('2d');
 			
 			setInterval(function() {
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 				var numPixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data.length/4;
-				console.log(numPixels);
+				
 			}, 1000);
 			
 		</script>
