@@ -40,8 +40,19 @@
 			
 			setInterval(function() {
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-				var numPixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data.length/4;
-				
+				var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+				var numPixels = data.length/4;
+				var r = [];
+				var g = [];
+				var b = [];
+				var a = [];
+				for (var i = 0; i < data.length; i+=4) {
+					r[data[i]]++;
+					g[data[i+1]]++;
+					b[data[i+2]]++;
+					a[data[i+3]]++;
+				}
+				console.log(r[0], g[0], b[0]);
 			}, 1000);
 			
 		</script>
