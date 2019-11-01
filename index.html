@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<style>
+			#container {
+				margin: 0px auto;
+				width: 500px;
+				height: 375px;
+				border: 10px #333 solid;
+			}
+			#videoElement {
+				width: 500px;
+				height: 375px;
+				background-color: #666;
+			}
+		</style>
+	</head>
+	
 	<body>
-		<canvas id="myCanvas" width=window.innerWidth height=window.innerHeight>
-		Your browser does not support the HTML5 canvas tag.</canvas>
+		<div id="container">
+			<video autoplay="true" id="videoElement">
+					
+			</video>
+		</div>
+		
 		<script>
-			var c = document.getElementById("myCanvas");
-			state = true;
-			var ctx = c.getContext("2d");
-			setInterval(function() {
-				state = !state;
-				ctx.beginPath();
-				ctx.rect(0, 0, window.innerWidth, window.innerHeight);
-				ctx.fillStyle = [255*state, 255*state, 255*state];
-				ctx.fill();
-				console.log(state);
-			}, 25);
-		</script> 
+			
+		</script>
+		var video = document.querySelector("#videoElement");
+
+		if (navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+				video.srcObject = stream;
+			});
+		}
 	</body>
 </html>
