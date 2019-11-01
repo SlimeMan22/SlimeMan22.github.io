@@ -47,6 +47,12 @@
 				var g = [];
 				var b = [];
 				var a = [];
+				for (var i = 0; i < 256; i++) {
+					r[i] = 0;
+					g[i] = 0;
+					b[i] = 0;
+					a[i] = 0;
+				}
 				for (var i = 0; i < data.length; i+=4) {
 					r[data[i]]++;
 					g[data[i+1]]++;
