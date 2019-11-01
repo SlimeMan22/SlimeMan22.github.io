@@ -59,7 +59,12 @@
 					b[data[i+2]]++;
 					a[data[i+3]]++;
 				}
-				console.log(r);
+				for (var i = 0; i < 256; i++) {
+					r[i] /= numPixels;
+					g[i] /= numPixels;
+					b[i] /= numPixels;
+					a[i] /= numPixels;
+				}
 			}, 1000);
 			
 		</script>
