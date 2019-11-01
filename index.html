@@ -25,15 +25,16 @@
 		
 		<script>
 			var video = document.querySelector("#videoElement");
+			var dims;
 
 			if (navigator.mediaDevices.getUserMedia) {
 				navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {
 					video.srcObject = stream;
+					dims = stream.getVideoTracks()[0].getSettings();
 				});
 			}
 			
 			var canvas = document.createElement('canvas');
-			var dims = stream.getVideoTracks()[0].getSettings();
 			canvas.width = dims.width;
 			canvas.height = dims.height;
 			var ctx = canvas.getContext('2d');
