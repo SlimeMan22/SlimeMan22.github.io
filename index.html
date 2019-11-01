@@ -37,14 +37,10 @@
 			canvas.width = video.videoWidth;
 			var ctx = canvas.getContext('2d');
 			
-			function getHistogram(imgData) {
-				var numPixels = imgData.data.length/4;
-				console.log(numPixels);
-			}
-			
-			video.onseeked = function(e) {
+			setInterval(function() {
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-				getHistogram(ctx.getImageData(0, 0, canvas.width, canvas.height));
+				var numPixels = ctx.getImageData().data.length/4;
+				console.log(numPixels);
 			}
 			
 		</script>
