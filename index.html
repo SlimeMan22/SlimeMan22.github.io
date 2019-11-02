@@ -47,6 +47,9 @@
 			canvas.height = 375;//dims.height;
 			var ctx = canvas.getContext('2d');
 			
+			var graph = document.querySelector("#graph").getContext('2d');
+			graph.fillRect(0, 0, 256, 100);
+			
 			setInterval(function() {
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 				var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
