@@ -73,11 +73,10 @@
 					a[i] /= numPixels;
 					
 					graph.beginPath();
-					graph.fillRect(i, 0, i, r[i]);
+					graph.fillRect(i, 0, i, r[i]*256);
 					graph.fillStyle = "red";
 					graph.fill();
 				}
-				console.log(r);
 			}, 1000);
 			
 		</script>
