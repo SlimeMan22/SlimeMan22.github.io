@@ -13,6 +13,10 @@
 				height: 375px;
 				background-color: #666;
 			}
+			#graph {
+				width: 256;
+				height: 100;
+			}
 		</style>
 	</head>
 	
@@ -21,6 +25,12 @@
 			<video autoplay="true" id="videoElement">
 					
 			</video>
+		</div>
+		
+		<div id="histogram">
+			<canvas>
+				
+			</canvas
 		</div>
 		
 		<script>
@@ -35,8 +45,8 @@
 			}
 			
 			var canvas = document.createElement('canvas');
-			canvas.width = 1000;//dims.width;
-			canvas.height = 1000;//dims.height;
+			canvas.width = 500;//dims.width;
+			canvas.height = 375;//dims.height;
 			var ctx = canvas.getContext('2d');
 			
 			setInterval(function() {
