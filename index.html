@@ -23,7 +23,7 @@
 			</video>
 		</div>
 	
-		<canvas id="graph" width="256" height="100">
+		<canvas id="graph" width="512" height="100">
 				
 		</canvas>
 		
@@ -44,11 +44,11 @@
 			var ctx = canvas.getContext('2d');
 			
 			var graph = document.querySelector("#graph").getContext('2d');
-			graph.fillRect(0, 0, 256, 100);
+			graph.fillRect(0, 0, 256*2, 100);
 			
 			setInterval(function() {
 				graph.fillStyle = "black";
-				graph.fillRect(0, 0, 256, 100);
+				graph.fillRect(0, 0, 256*2, 100);
 				
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 				var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
@@ -71,14 +71,14 @@
 					g[i] /= numPixels;
 					b[i] /= numPixels;
 				
-					graph.fillStyle = "rgba(255, 0, 0, .5)";
-					graph.fillRect(i, 100, 1, -r[i]*100);
+					graph.fillStyle = "rgba(255, 0, 0, 1)";
+					graph.fillRect(i*2, 100, 1*2, -r[i]*100);
 					
-					graph.fillStyle = "rgba(0, 255, 0, .5)";
-					graph.fillRect(i, 100, 1, -g[i]*100);
+					//graph.fillStyle = "rgba(0, 255, 0, .5)";
+					//graph.fillRect(i, 100, 1, -g[i]*100);
 					
-					graph.fillStyle = "rgba(0, 0, 255, .5)";
-					graph.fillRect(i, 100, 1, -b[i]*100);
+					//graph.fillStyle = "rgba(0, 0, 255, .5)";
+					//graph.fillRect(i, 100, 1, -b[i]*100);
 				}
 			}, 1000);
 			
