@@ -71,13 +71,13 @@
 					g[i] /= numPixels;
 					b[i] /= numPixels;
 				
-					graph.fillStyle = "rgba(255, 0, 0, .33)";
+					graph.fillStyle = "rgba(255, 0, 0, .5)";
 					graph.fillRect(i, 100, 1, -r[i]*100);
 					
-					graph.fillStyle = "rgba(0, 255, 0, .33)";
+					graph.fillStyle = "rgba(0, 255, 0, .5)";
 					graph.fillRect(i, 100, 1, -g[i]*100);
 					
-					graph.fillStyle = "rgba(0, 0, 255, .33)";
+					graph.fillStyle = "rgba(0, 0, 255, .5)";
 					graph.fillRect(i, 100, 1, -b[i]*100);
 				}
 			}, 1000);
