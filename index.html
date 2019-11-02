@@ -71,6 +71,11 @@
 					g[i] /= numPixels;
 					b[i] /= numPixels;
 					a[i] /= numPixels;
+					
+					graph.beginPath();
+					graph.fillRect(i, 0, i, r[i]);
+					graph.fillStyle = "red";
+					graph.fill();
 				}
 			}, 1000);
 			
