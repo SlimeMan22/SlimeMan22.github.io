@@ -75,8 +75,12 @@
 					b[i] /= numPixels;
 					a[i] /= numPixels;
 				
-					graph.fillStyle = "red";
+					graph.fillStyle = "rgba(255, 0, 0, .33)";
 					graph.fillRect(i, 0, i, r[i]*100);
+					graph.fillStyle = "rgba(0, 255, 0, .33)";
+					graph.fillRect(i, 0, i, g[i]*100);
+					graph.fillStyle = "rgba(0, 0, 255, .33)";
+					graph.fillRect(i, 0, i, b[i]*100);
 				}
 			}, 1000);
 			
