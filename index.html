@@ -50,7 +50,7 @@
 				graph.fillStyle = "black";
 				graph.fillRect(0, 0, 256*2, 100);
 				
-				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+				ctx.drawImage(video, 0, 0, 1000, 1000);
 				var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 				var numPixels = data.length/4;
 				var r = [];
