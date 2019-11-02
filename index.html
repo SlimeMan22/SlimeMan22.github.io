@@ -47,6 +47,11 @@
 			graph.fillRect(0, 0, 256, 100);
 			
 			setInterval(function() {
+				graph.beginPath();
+				graph.fillRect(0, 0, 256, 100);
+				graph.fillStyle = "black";
+				graph.fill();
+				
 				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 				var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 				var numPixels = data.length/4;
@@ -73,7 +78,7 @@
 					a[i] /= numPixels;
 					
 					graph.beginPath();
-					graph.fillRect(i, 0, i, r[i]*256);
+					graph.fillRect(i, 0, i, r[i]*100);
 					graph.fillStyle = "red";
 					graph.fill();
 				}
