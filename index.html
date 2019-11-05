@@ -66,10 +66,11 @@
 					g[data[i+1]]++;
 					b[data[i+2]]++;
 				}
+				var maxFound = Math.max(...r, ...g, ...b);
 				for (var i = 0; i < 256; i++) {
-					r[i] /= numPixels;
-					g[i] /= numPixels;
-					b[i] /= numPixels;
+					r[i] /= maxFound;
+					g[i] /= maxFound;
+					b[i] /= maxFound;
 				
 					graph.fillStyle = "rgba(255, 0, 0, 1)";
 					graph.fillRect(i*2, 100, 1*2, -r[i]*100);
